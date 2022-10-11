@@ -10,9 +10,7 @@ import UIKit
 
 class ViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
     var myFriendsArray = ["Sara", "Mirabai", "Denelle"]
-
     var countriesToVisitArray = ["Greece", "Jamaica", "Spain", "Portugal", "UK"]
-    
     var friendsHomeArray = ["Honolulu", "Haiku", "Pukalani"]
     
     
@@ -29,7 +27,6 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         cell?.textLabel?.text = text
         cell?.detailTextLabel?.text = friendsHomeArray[indexPath.row]
         return cell!
-
     }
     
 
