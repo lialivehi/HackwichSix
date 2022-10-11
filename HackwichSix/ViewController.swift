@@ -28,7 +28,6 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         
         cell?.textLabel?.text = text
         cell?.detailTextLabel?.text = friendsHomeArray[indexPath.row]
-
         return cell!
         
     }
