@@ -9,13 +9,8 @@
 import UIKit
 
 class ViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
-    var myFriendsArray = ["Sara", "Mirabai", "Denelle"]
-    var countriesToVisitArray = ["Greece", "Jamaica", "Spain", "Portugal", "UK"]
-    var friendsHomeArray = ["Honolulu", "Haiku", "Pukalani"]
-    
-    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return myFriendsArray.count
+         return myFriendsArray.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -29,12 +24,45 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         return cell!
     }
     
-
+   
+var myFriendsArray = ["Kapolei Kalapawai"]
+    
+    @IBOutlet weak var tableView: UITableView!
+    var countriesToVisitArray = ["Greece", "Jamaica", "Spain", "Portugal", "UK"]
+    
+    var friendsHomeArray = ["Kapolei"]
+    
+    var restaurantImageData = [String]()
+    
     override func viewDidLoad() {
-        super.viewDidLoad()
-        // Do any additional setup after loading the view.
+    super.viewDidLoad()
+    // Do any additional setup after loading the view.
+    
+    let path = Bundle.main.path(forResource: "Property List",ofType: "plist")
+    let dict = NSDictionary(contentsOfFile: path!)
+    
+        restaurantImageData = dict!.object(forKey: "Restaurant Images")
+        as! [String]
+        
+        func tableView(_ tableView: UITableView, didSelectRowAt IndexPath: IndexPath){
+            tableView.deselectRow(at: IndexPath as IndexPath, animated: true)
+        }
+    
+   
+  
+        
     }
+    
+
+    override func prepare(for segue:UIStoryboardSegue, sender: Any?)
+        {
+            let s1 = segue.destination as! detailedViewController
+            let imageIndex = tableView.indexPathForSelectedRow?.row
+            s1.imagePass = restaurantImageData[imageIndex!]
+        }
+        
+        
+   }
 
 
-}
 
