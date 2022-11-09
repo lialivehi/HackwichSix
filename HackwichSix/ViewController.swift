@@ -30,7 +30,7 @@ var myFriendsArray = ["Kapolei Kalapawai"]
     @IBOutlet weak var tableView: UITableView!
     var countriesToVisitArray = ["Greece", "Jamaica", "Spain", "Portugal", "UK"]
     
-    var friendsHomeArray = ["Kapolei"]
+    var friendsHomeArray = ["Kapolei"] 
     
     var restaurantImageData = [String]()
     
