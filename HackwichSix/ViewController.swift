@@ -24,7 +24,7 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         return cell!
     }
     
-   
+   //change 
 var myFriendsArray = ["Kapolei Kalapawai"]
     
     @IBOutlet weak var tableView: UITableView!
